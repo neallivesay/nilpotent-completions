@@ -78,6 +78,7 @@ def coxeter_connection(n, r, partition):
     	    [1, 0, 0, 0, 0],
 	    [0, 1, 0, 0, 0],
 	    [0, 0, 1, 0, 0]])
+	    
     >>> coxeter_connection(5, 2, [5])
     matrix([[0, 0, 0, 0, 0],
     	    [0, 0, 0, 0, 1],
@@ -242,12 +243,16 @@ def partition_conjugate(partition):
 
     Examples
     --------
+    
     >>> partition_conjugate([5])
     [1, 1, 1, 1, 1]
+    
     >>> partition_conjugate([1, 1, 1, 1, 1])
     [5]
+    
     >>> partition_conjugate([5, 4, 4, 2, 1, 1])
     [6, 4, 3, 3, 1]
+    
     >>> partition_conjugate([3, 3, 3, 2, 2])
     [5, 5, 3]
     """
