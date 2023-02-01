@@ -8,4 +8,4 @@ This project contains an implementation (written in Python3 and NumPy) of the al
 
 ## License
 
-This project is licensed under the terms of the MIT license.
+This project is licensed under the terms of the MIT License.
