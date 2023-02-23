@@ -8,9 +8,7 @@ may be used for testing.
 
 References
 ----------
-.. [1] N. Livesay, D. S. Sage, B. Nguyen, J. P. Matherne, and M. C. 
-   Kulkarni, "Explicit constructions of connections on Gm with a 
-   maximally ramified irregular singularity," 2023.
+.. [1] TBA.
 
 """
 
