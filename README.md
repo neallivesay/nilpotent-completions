@@ -6,7 +6,7 @@ This project contains an implementation (written in Python3 and NumPy) of the al
 
 ## Short description
 
-Let `r` and `n` be positive integers with `r<n`. Define `N_r` to be the `n` by `n` matrix with ones on the `r`th subdiagonal and zeroes elsewhere. Note that `N_r` is nilpotent, i.e., there exists a positive integer `k` such that `N_r^k==0`.
+Let $r$ and `n` be positive integers with `r<n`. Define `N_r` to be the `n` by `n` matrix with ones on the `r`th subdiagonal and zeroes elsewhere. Note that `N_r` is nilpotent, i.e., there exists a positive integer `k` such that $N_r^k==0$.
 
 Let `p` be an integer partition of `n`. 
 
