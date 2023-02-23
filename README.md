@@ -4,22 +4,31 @@ This project contains an implementation (written in Python3 and NumPy) of the al
 
 > TBA.
 
-## Short description
+## Mathematical background
 
-Let $r$ and `n` be positive integers with `r<n`. Define `N_r` to be the `n` by `n` matrix with ones on the `r`th subdiagonal and zeroes elsewhere. Note that `N_r` is nilpotent, i.e., there exists a positive integer `k` such that $N_r^k==0$.
+Let $r$ and $n$ be positive integers with $r<n$. Define $N_r$ to be the $n\times n$ matrix with ones on the $r$th subdiagonal and zeroes elsewhere.
 
-Let `p` be an integer partition of `n`. 
+For example, the $5\times 5$ matrix $N_5$ is shown below:
+\[
+N_5 =
+\begin{bmatrix}
+0&0&0&0&0\\
+0&0&0&0&0\\
+1&0&0&0&0\\
+0&1&0&0&0\\
+0&0&1&0&0\\
+\end{bmatrix}.
+\]
 
-## Mathematical Prerequisites
+Note that $N_r$ is nilpotent, i.e., there exists a positive integer $k$ such that $N_r^k=0$.
 
-To understand this project, it should be sufficient 
-
-This algorithm generates upper nilpotent completions for the matrix $N_r$, the $n\times n$ matrix with ones on the $r$th (where $0<r<n$) subdiagonal and zeroes elsewhere.
+Let $\lambda$ be a partition of $n$ with at most $r$ parts. By a theorem due to Mark Krupnik and Sasha Leibman, there exists a strictly upper triangular matrix $X$ such that $N_r+X$ is nilpotent of type $\lambda$ (i.e., the sizes of the Jordan blocks in $N_r+X$ correspond to the parts in $\lambda$).
 
 
 
 
-This
+
+## References
 
 
 
