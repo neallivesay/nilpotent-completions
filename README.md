@@ -1,4 +1,4 @@
-# Explicit constructions of Coxeter connections
+# Explicit upper nilpotent completions
 
 ## What is this?
 
