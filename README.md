@@ -1,25 +1,31 @@
 # Explicit upper nilpotent completions
 
-This project contains an implementation (written in Python3 and NumPy) of the algorithm specified in the following research article:
-
-> TBA.
+This project contains an implementation (written in Python3 and NumPy) of the algorithm specified in the research article by [[TODO]](#1).
 
 ## Mathematical background
 
 This project assumes that the reader is familiar with the following facts from linear algebra:
 1. Any square matrix over the complex numbers is similar to a matrix in [Jordan canonical form](https://en.wikipedia.org/wiki/Jordan_normal_form).
-2. Any $n\times n$ [nilpotent](https://en.wikipedia.org/wiki/Nilpotent_matrix) can be associated to a [partition](https://en.wikipedia.org/wiki/Partition_(number_theory)) of $n$ (by mapping the matrix to the partition with parts corresponding to the sizes of the Jordan blocks).
+2. The Jordan block sizes of an $n\times n$ forms a [partition](https://en.wikipedia.org/wiki/Partition_(number_theory)) of $n$.
+3. In particular, any $n\times n$ [nilpotent matrix](https://en.wikipedia.org/wiki/Nilpotent_matrix) can be associated to a partition of $n$. If $A$ is a nilpotent matrix and $\lambda$ is a partition, we say that $A$ has _type_ $\lambda$ if the parts of $\lambda$ are the Jordan block sizes of $A$.
 
-Let $A$ be an $n\times n$ matrix with complex entries. Moreover, suppose that $A$ is nilpotent; i.e., suppose that there exists a positive integer $k$ such that $A^k=0$. There is a correspondence between nilpotent $n\times n$ matrices and partitions of $n$.
+Let $r$ and $n$ be positive integers with $r\textless n$. Define $N_r$ to be the $n\times n$ matrix with ones on the $r$th subdiagonal and zeroes elsewhere. It is easy to verify that $N_r$ is nilpotent.
 
-Let $r$ and $n$ be positive integers with $r<n$. Define $N_r$ to be the $n\times n$ matrix with ones on the $r$th subdiagonal and zeroes elsewhere.
+Let $\lambda$ be a partition of $n$ with at most $r$ parts. By a theorem due to Mark Krupnik and Sasha Leibman [[KL95]](#2), there exists a strictly upper triangular matrix $X$ such that $N_r+X$ is nilpotent of type $\lambda$. We call the resulting matrix an _upper nilpotent completion_ of $N_r$.
 
-Let $\lambda$ be a partition of $n$ with at most $r$ parts. By a theorem due to Mark Krupnik and Sasha Leibman [1], there exists a strictly upper triangular matrix $X$ such that $N_r+X$ is nilpotent of type $\lambda$ (i.e., the sizes of the Jordan blocks in $N_r+X$ correspond to the parts in $\lambda$).
+The algorithm defined in [[TODO]](#1) produces explicit constructions of upper nilpotent completions for $N_r$ in all cases that they exists (i.e., when $\lambda$ has at most $r$ parts). This algorithm is implemented in this project.
 
+## How to use
+
+All of the source code is contained in one file: `coxeter.py`. In the file are three functions. The first function, `nilpotent_completion()`, is the implementation of the upper nilpotent completion algorithm. The latter two functions, `partition_conjugate()` and `nilpotency_type()`, can be used for testing. The docstrings contains instructions for use and examples.
 
 ## References
 
-[1] M. Krupnik and A. Leibman. Jordan structures of strictly lower triangular completions of nilpotent matrices. Integr. Equat. Oper. Th. 23 (1995), 459--471.
+<a id="1">[TODO]</a>
+TODO. Explicit constructions of connections on $G_m$ with a maximally ramified irregular singularity (2023).
+
+<a id="2">[KL95]</a>
+M. Krupnik and A. Leibman. Jordan structures of strictly lower triangular completions of nilpotent matrices. Integr. Equat. Oper. Th. 23 (1995), 459--471.
 
 ## License
 
