@@ -17,6 +17,10 @@ Let $\lambda$ be a partition of $n$ with at most $r$ parts. By a theorem due to 
 
 The algorithm defined in [[TODO]](#1) produces explicit constructions of upper nilpotent completions for $N_r$ in all cases that they exists (i.e., when $\lambda$ has at most $r$ parts). This algorithm is implemented in this project.
 
+## Motivation
+
+An upper nilpotent completion of $N_r$ gives rise to a _homogeneous Coxeter connection_ (and a solution to an important special case of the _Deligne--Simpson problem_). See [[TODO]](#1) or [[KLMNS22]](#3) for details.
+
 ## How to use
 
 All of the source code is contained in one file: `nilp-completion.py`.
@@ -29,7 +33,10 @@ In `nilp-completion.py` are three functions. The first function, `nilpotent_comp
 TODO. Explicit constructions of connections on $G_m$ with a maximally ramified irregular singularity (2023).
 
 <a id="2">[KL95]</a>
-M. Krupnik and A. Leibman. Jordan structures of strictly lower triangular completions of nilpotent matrices. Integr. Equat. Oper. Th. 23 (1995), 459--471.
+M. Krupnik and A. Leibman. Jordan structures of strictly lower triangular completions of nilpotent matrices. Integral Equations and Operator Theory 23 (1995), 459--471.
+
+<a id="3">[KLMNS22]</a>
+M. C. Kulkarni, N. Livesay, J. P. Matherne, B. Nguyen, and D. S. Sage. The Deligne–Simpson problem for connections on $G_m$ with a maximally ramified singularity. Advances in Mathematics 408 (2022), 108596.
 
 ## License
 
