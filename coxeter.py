@@ -1,7 +1,7 @@
 r"""
-Explicit constructions of Coxeter connections
+Explicit upper nilpotent completions
 
-The function `coxeter_connection()` (defined herein) is an
+The function `nilpotent_completion()` (defined herein) is an
 implementation of Algorithm 1 specified in [1]_. See the article and/or
 docstrings for details and examples. The function `nilpotency_type()`
 may be used for testing.
@@ -15,12 +15,11 @@ References
 from numpy import matrix
 from numpy import linalg # for `matrix_rank()`
 
-def coxeter_connection(n, r, partition):
-    r""" Returns an `n x n` nilpotent matrix of type `partition`
+def nilpotent_completion(n, r, partition):
+    r""" Returns an upper nilpotent completion of type `partition`
 
     Returns matrix of the form `N_r + X` with the following properties:
-        - `N_r` and `X` are both `n x n` matrices with all entries
-            equal to either 0 or 1
+    	- `N_r` and `X` are `n` by `n` matrices
         - `N_r` is the matrix with 1s on the rth subdiagonal
             (and 0s elsewhere)
         - `X` is strictly upper triangular
@@ -42,7 +41,7 @@ def coxeter_connection(n, r, partition):
     Returns
     -------
     gamma : numpy matrix
-        Returns `n x n` matrix which is nilpotent of type `partition`.
+        Returns `n` by `n` matrix that is nilpotent of type `partition`.
                 
     Notes
     -----
@@ -50,17 +49,15 @@ def coxeter_connection(n, r, partition):
 
     References
     ----------
-    .. [1] N. Livesay, D. S. Sage, B. Nguyen, J. P. Matherne, and M. C.
-       Kulkarni, "Explicit constructions of connections on Gm with a 
-       maximally ramified irregular singularity," 2023. [TODO]
+    .. [1] TBA.
 
     Examples
     --------
-    The example below returns a `5 x 5` matrix of the form `N_2+X`
+    The example below returns a `5` by `5` matrix of the form `N_2+X`
     which is nilpotent of type `[3, 2]`. Since `N_2` already has type
     `[3, 2]`, it simply returns `N_2`.
 
-    >>> coxeter_connection(5, 2, [3, 2])
+    >>> nilpotent_completion(5, 2, [3, 2])
     matrix([[0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [1, 0, 0, 0, 0],
@@ -70,14 +67,14 @@ def coxeter_connection(n, r, partition):
     The remaining examples are less trivial; the upper-triangle 
     contains some 1s.
 
-    >>> coxeter_connection(5, 2, [4, 1])
+    >>> nilpotent_completion(5, 2, [4, 1])
     matrix([[0, 0, 0, 0, 0],
     	    [0, 0, 1, 0, 0],
     	    [1, 0, 0, 0, 0],
 	    [0, 1, 0, 0, 0],
 	    [0, 0, 1, 0, 0]])
 	    
-    >>> coxeter_connection(5, 2, [5])
+    >>> nilpotent_completion(5, 2, [5])
     matrix([[0, 0, 0, 0, 0],
     	    [0, 0, 0, 0, 1],
     	    [1, 0, 0, 0, 0],
@@ -106,7 +103,7 @@ def coxeter_connection(n, r, partition):
         raise ValueError('input `partition` must have len at most `r`')
 
     # Initialization of variables:
-    # - `gamma` is an `n x n` numpy matrix, initialized to `N_r`
+    # - `gamma` is an `n` by `n` numpy matrix, initialized to `N_r`
     # i.e., the matrix with 1s on `r`th subdiagonal and 0s elsewhere.
     # - `tall` is a list of all the parts in `partition` larger than
     #   `ceiling{n/r}` possibly with extra copies of `ceiling{n/r}`
@@ -140,8 +137,8 @@ def coxeter_connection(n, r, partition):
 
     # helper functions
     def e_ij(i, j):
-        """returns `n x n` matrix with 1 in `(i+1, j+1)`-entry and
-        0s elsewhere (standard basis vector for `n x n` matrices)"""
+        """returns `n` by `n` matrix with 1 in `(i+1, j+1)`-entry and
+        0s elsewhere (standard basis vector for `n` by `n` matrices)"""
         return matrix([[(1 if row==j and col==i else 0) \
                            for col in range(n)] for row in range(n)])
  
@@ -284,7 +281,7 @@ def nilpotency_type(X):
     Parameters
     ----------
     X : numpy matrix
-	Must be square; i.e., must be `n x n` for some integer n>0.
+	Must be square; i.e., must be `n` by `n` for some integer `n>0`.
     
     Returns
     -------
@@ -340,7 +337,7 @@ def nilpotency_type(X):
     """
     n = len(X)
     X_to_power = X.copy()
-    # by Rank-Nullity Theorem, nullity(X) = n - rank(X)
+    # by Rank-Nullity Theorem, `nullity(X) == n - rank(X)`
     previous_nullity = n - linalg.matrix_rank(X_to_power)
     nullities = [previous_nullity]
     power = 1
@@ -350,7 +347,7 @@ def nilpotency_type(X):
         current_nullity = n - linalg.matrix_rank(X_to_power)
         nullities.append(current_nullity - previous_nullity)
         previous_nullity = current_nullity
-    # if the nth power of an n x n matrix is not zero,
+    # if the `n`th power of an `n` by `n` matrix is not zero,
     # then the matrix is not nilpotent; raise an error in this case
     if power > n: raise ValueError('\n'+repr(X)+' is not nilpotent')
     return partition_conjugate(nullities)
