@@ -13,7 +13,7 @@ If $A$ is a nilpotent matrix and $\lambda$ is a partition, we say that $A$ has _
 
 Let $r$ and $n$ be positive integers with $r$ less than $n$. Define $N_r$ to be the $n\times n$ matrix with ones on the $r$ th subdiagonal and zeroes elsewhere. It is easy to verify that $N_r$ is nilpotent.
 
-Let $\lambda$ be a partition of $n$ with at most $r$ parts. By a theorem due to Mark Krupnik and Sasha Leibman [[KL95]](#2), there exists a strictly upper triangular matrix $X$ such that $N_r+X$ is nilpotent of type $\lambda$. We call the resulting matrix an _upper nilpotent completion_ of $N_r$.
+Let $\lambda$ be a partition of $n$ with at most $r$ parts. By a theorem due to Mark Krupnik and Sasha Leibman [[KL95]](#2), there exists a strictly upper triangular matrix $X$ such that $N_r+X$ is nilpotent of type $\lambda$. We call the resulting matrix an _upper nilpotent matrix completion_ of $N_r$.
 
 The algorithm defined in [[TODO]](#1) produces explicit constructions of upper nilpotent completions for $N_r$ in all cases that they exists (i.e., when $\lambda$ has at most $r$ parts). This algorithm is implemented in this project.
 
