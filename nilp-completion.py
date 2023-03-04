@@ -8,7 +8,8 @@ may be used for testing.
 
 References
 ----------
-.. [1] TBA.
+.. [1] N. Livesay, D. S. Sage, and B. Nguyen. Explicit constructions of
+       on Gm with a maximally ramified irregular singularity (2023).
 
 """
 
