@@ -9,7 +9,8 @@ may be used for testing.
 References
 ----------
 .. [1] N. Livesay, D. S. Sage, and B. Nguyen. Explicit constructions of
-       on Gm with a maximally ramified irregular singularity (2023).
+       connections on Gm with a maximally ramified irregular
+       singularity (2023).
 
 """
 
@@ -50,7 +51,9 @@ def nilpotent_completion(n, r, partition):
 
     References
     ----------
-    .. [1] TBA.
+    .. [1] N. Livesay, D. S. Sage, and B. Nguyen. Explicit 
+           constructions of connections on Gm with a maximally ramified
+	   irregular singularity (2023).
 
     Examples
     --------
