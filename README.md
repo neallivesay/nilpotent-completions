@@ -1,4 +1,4 @@
-# Explicit upper nilpotent matrix completions
+# Upper nilpotent matrix completions
 
 This project contains an implementation (written in Python3 and NumPy) of the algorithm specified in the research article by Livesay, Sage, and Nguyen [[LSN23]](#1).
 
