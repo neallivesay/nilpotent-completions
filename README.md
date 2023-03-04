@@ -25,7 +25,7 @@ An upper nilpotent completion of $N_r$ gives rise to a _homogeneous Coxeter conn
 
 All of the source code is contained in one file: `nilp-completion.py`.
 
-The source file `nilp-completion.py` contains three functions. The first function, `nilpotent_completion()`, is the implementation of the upper nilpotent completion algorithm defined in [[LSN]](#1). The latter two functions, `partition_conjugate()` and `nilpotency_type()`, can be used for testing. The docstrings contains instructions for use and examples.
+The source file `nilp-completion.py` contains three functions. The first function, `nilpotent_completion()`, is the implementation of the upper nilpotent completion algorithm defined in [[LSN23]](#1). The latter two functions, `partition_conjugate()` and `nilpotency_type()`, can be used for testing. The docstrings contains instructions for use and examples.
 
 ## References
 
