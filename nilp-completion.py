@@ -52,9 +52,9 @@ def nilpotent_completion(n, r, partition):
 
     References
     ----------
-    .. [1] N. Livesay, D. S. Sage, and B. Nguyen. Explicit 
+    .. [1] N. Livesay, D. S. Sage, and B. Nguyen. Explicit
            constructions of connections on Gm with a maximally ramified
-	   irregular singularity (2023).
+           irregular singularity (2023).
 
     Examples
     --------
