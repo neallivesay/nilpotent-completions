@@ -30,7 +30,7 @@ The source file `nilp-completion.py` contains three functions. The first functio
 ## References
 
 <a id="1">[LSN23]</a>
-N. Livesay, D. S. Sage, and B. Nguyen. Explicit constructions of connections on $G_m$ with a maximally ramified irregular singularity (2023).
+N. Livesay, D. S. Sage, and B. Nguyen. Explicit constructions of connections on the projective line with a maximally ramified irregular singularity (2023).
 
 <a id="2">[KL95]</a>
 M. Krupnik and A. Leibman. Jordan structures of strictly lower triangular completions of nilpotent matrices. Integral Equations and Operator Theory 23 (1995), 459–471.
