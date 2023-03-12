@@ -27,7 +27,7 @@ def nilpotent_completion(n, r, partition):
             (and 0s elsewhere)
         - `X` is strictly upper triangular
         - `N_r + X` is nilpotent of type `partition`; i.e., `partition`
-            gives the sizes of the Jordan blocks for `N_r + X`.
+            gives the sizes of the Jordan blocks for `N_r + X`
 
     Parameters
     ----------
@@ -88,13 +88,14 @@ def nilpotent_completion(n, r, partition):
     """
 
     # raise Exception if any issues with input `r`, `n`, or `partition`
-    if type(r) != int or type(n) != int:
+    if not isinstance(r, int) or not isinstance(n, int):
         raise TypeError('inputs `n` and `r` must be integers')
     if not 1 <= r < n:
         raise ValueError('inputs `n` and `r` should satisfy 1<=r<n')
     if not hasattr(partition, '__iter__'):
         raise TypeError('input `partition` must be iterable')
-    if any(type(partition[i]) != int for i in range(len(partition))):
+    if any(not isinstance(partition[i], int) for i in
+           range(len(partition))):
         raise TypeError('input `partition` should be an iter of ints')
     if sum(partition) != n:
         raise ValueError('values in `partition` should sum to n')
@@ -278,7 +279,7 @@ def partition_conjugate(partition):
     return conjugate
 
 
-def nilpotency_type(X):
+def nilpotency_type(mat_x):
     r"""
     Returns Jordan block sizes (aka type) of a nilpotent square matrix.
 
@@ -289,24 +290,26 @@ def nilpotency_type(X):
 
     Parameters
     ----------
-    X : numpy matrix
-        Must be square; i.e., must be `n` by `n` for some integer `n>0`
+    mat_x : numpy matrix
+        Must be square; i.e., must be `n` by `n` for some positive
+        integer `n`.
 
     Returns
     -------
     iterable of integers
-        Returns a "partition"; i.e. an iterable of integers in
-        monotone decreasing order which sum to `n`, where `n` is the
-        number of rows (equiv. columns) in `X`. The entries (aka parts)
-        in this partition are precisely the sizes of the Jordan blocks
-        in `X`. This partition is also known as the "type" of `X`.
+        Returns a "partition"; i.e. an iterable of integers in monotone
+        decreasing order which sum to `n`, where `n` is the number of
+        rows (equiv. columns) in `mat_x`. The entries (aka parts) in
+        this partition are precisely the sizes of the Jordan blocks in
+        `mat_x`. This partition is also known as the "type" of `mat_x`.
 
     Notes
     -----
-    Suppose `X` is nilpotent of order k; i.e., `X^k == 0`. The type of
-    `X` is given by the conjugate (aka dual) of the partition
-    `(nullity(X), nullity(X^2)-nullity(X), nullity(X^3)-nullity(X^2),
-        ..., nullity(X^k)-nullity(X^{k-1})`.
+    Suppose `mat_x` is nilpotent of order k; i.e., `mat_x^k == 0`. The
+    type of `mat_x` is given by the conjugate (aka dual) of the
+    partition `(nullity(mat_x), nullity(mat_x^2)-nullity(mat_x),
+    nullity(mat_x^3)-nullity(mat_x^2),...,
+    nullity(mat_x^k)-nullity(mat_x^{k-1})`.
 
     Examples
     --------
@@ -344,22 +347,22 @@ def nilpotency_type(X):
     ... [0,0,0,0,0]]))
     [1, 1, 1, 1, 1]
     """
-    n = len(X)
-    X_to_power = X.copy()
-    # by Rank-Nullity Theorem, `nullity(X) == n - rank(X)`
-    previous_nullity = n - linalg.matrix_rank(X_to_power)
+    n = len(mat_x)
+    pow_x = mat_x.copy()
+    # by Rank-Nullity Theorem, `nullity(mat_x) == n - rank(mat_x)`
+    previous_nullity = n - linalg.matrix_rank(pow_x)
     nullities = [previous_nullity]
     power = 1
     while power <= n and previous_nullity < n:
         power += 1
-        X_to_power *= X
-        current_nullity = n - linalg.matrix_rank(X_to_power)
+        pow_x *= mat_x
+        current_nullity = n - linalg.matrix_rank(pow_x)
         nullities.append(current_nullity - previous_nullity)
         previous_nullity = current_nullity
     # if the `n`th power of an `n` by `n` matrix is not zero,
     # then the matrix is not nilpotent; raise an error in this case
     if power > n:
-        raise ValueError('\n'+repr(X)+' is not nilpotent')
+        raise ValueError('\n'+repr(mat_x)+' is not nilpotent')
     return partition_conjugate(nullities)
 
 
