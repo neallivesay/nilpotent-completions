@@ -8,9 +8,9 @@ may be used for testing.
 
 References
 ----------
-.. [1] N. Livesay, D. S. Sage, and B. Nguyen. Explicit constructions of
-       connections on the projective line with a maximally ramified
-       irregular singularity (2023).
+.. [1] N. Livesay, D. S. Sage, and B. Nguyen (2023). "Explicit
+       constructions of connections on the projective line with a
+       maximally ramified irregular singularity". arXiv:2303.06581.
 
 """
 
@@ -52,9 +52,9 @@ def nilpotent_completion(n, r, partition):
 
     References
     ----------
-    .. [1] N. Livesay, D. S. Sage, and B. Nguyen. Explicit
+    .. [1] N. Livesay, D. S. Sage, and B. Nguyen (2023). "Explicit
            constructions of connections on the projective line with a
-           maximally ramified irregular singularity (2023).
+           maximally ramified irregular singularity". arXiv:2303.06581.
 
     Examples
     --------

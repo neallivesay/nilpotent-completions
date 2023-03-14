@@ -30,13 +30,13 @@ The source file `nilp-completion.py` contains three functions. The first functio
 ## References
 
 <a id="1">[LSN23]</a>
-N. Livesay, D. S. Sage, and B. Nguyen. Explicit constructions of connections on the projective line with a maximally ramified irregular singularity (2023).
+N. Livesay, D. S. Sage, and B. Nguyen (2023). "Explicit constructions of connections on the projective line with a maximally ramified irregular singularity". <a href="https://arxiv.org/abs/2303.06581">arXiv:2303.06581</a>.
 
 <a id="2">[KL95]</a>
-M. Krupnik and A. Leibman. Jordan structures of strictly lower triangular completions of nilpotent matrices. Integral Equations and Operator Theory 23 (1995), 459–471.
+M. Krupnik and A. Leibman (1995). "Jordan structures of strictly lower triangular completions of nilpotent matrices". Integral Equations and Operator Theory **23**, 459–471.
 
 <a id="3">[KLMNS22]</a>
-M. C. Kulkarni, N. Livesay, J. P. Matherne, B. Nguyen, and D. S. Sage. The Deligne–Simpson problem for connections on $G_m$ with a maximally ramified singularity. Advances in Mathematics 408 (2022), 108596.
+M. C. Kulkarni, N. Livesay, J. P. Matherne, B. Nguyen, and D. S. Sage (2022). "The Deligne–Simpson problem for connections on $G_m$ with a maximally ramified singularity". Advances in Mathematics **408**, 108596.
 
 ## License
 
