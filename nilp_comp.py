@@ -231,6 +231,7 @@ def nilpotent_completion(n, r, partition):
 # useful functions for testing
 
 
+# --------------------------------------------------
 def partition_conjugate(partition):
     r""" The conjugate (aka dual) of an integer partition.
 
@@ -279,6 +280,7 @@ def partition_conjugate(partition):
     return conjugate
 
 
+# --------------------------------------------------
 def nilpotency_type(mat_x):
     r"""
     Returns Jordan block sizes (aka type) of a nilpotent square matrix.
