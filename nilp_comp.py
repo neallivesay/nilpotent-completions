@@ -228,8 +228,6 @@ def nilpotent_completion(n, r, partition):
 
     return gamma
 
-# useful functions for testing
-
 
 # --------------------------------------------------
 def partition_conjugate(partition):
